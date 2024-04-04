@@ -6,8 +6,8 @@
 
 ## API endpoints
 
-1. `POST /api/auth/signup`: Creates a new user
-2. `POST /api/auth/signin`: Logs in a user
+1. `POST /api/auth/register`: Creates a new user
+2. `POST /api/auth/login`: Logs in a user
 
 ## Body Payload Specification
 Signup expects
