@@ -20,7 +20,9 @@ exports.register = (req, res) => {
                 status: "success",
                 data: {
                     token,
-                    data
+                    firstname: data.firstname,
+                    lastname: data.lastname,
+                    email: data.email
                 }
             });
         }
