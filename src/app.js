@@ -1,10 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-
 const authRoute = require('./routes/auth.route');
 const userRoute = require('./routes/user.route');
-
+const serveIndex = require('serve-index');
 const { httpLogStream } = require('./utils/logger');
 
 const app = express();
@@ -18,6 +17,7 @@ app.use(cors());
 app.use('/api/auth', authRoute);
 app.use('/api/user', userRoute);
 
+app.use('/.well-known', express.static('.well-known'), serveIndex('.well-known'));
 
 app.get('/', (req, res) => {
     res.status(200).send({
